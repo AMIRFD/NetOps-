@@ -174,30 +174,6 @@
       box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
     }
 
-    /* رادار نشانگر آنلاین */
-    .online-indicator {
-      position: absolute;
-      bottom: 6px;
-      right: 6px;
-      width: 16px;
-      height: 16px;
-      background: var(--accent);
-      border: 3px solid #1e293b;
-      border-radius: 50%;
-    }
-
-    .online-indicator::before {
-      content: '';
-      position: absolute;
-      top: -3px;
-      left: -3px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: rgba(16, 185, 129, 0.6);
-      animation: radar-wave 3s infinite cubic-bezier(0, 0.2, 0.8, 1);
-    }
-
     .rep-name {
       font-size: 1.35rem;
       font-weight: 800;
@@ -434,7 +410,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      direction: ltr; /* مرتب‌سازی کلمات انگلیسی */
+      direction: ltr;
       justify-content: flex-end;
     }
 
@@ -481,18 +457,16 @@
     <aside class="sidebar-col">
       <div class="glass-card profile-card">
         
-        <!-- تصویر نماینده -->
+        <!-- تصویر نماینده (بدون نشانگر سبز رنگ) -->
         <div class="avatar-container">
           <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80" alt="تصویر نماینده" class="avatar-img">
-          <!-- رادار آنلاین بودن -->
-          <span class="online-indicator" title="در دسترس"></span>
         </div>
 
         <!-- نام و عنوان -->
         <h2 class="rep-name">مهندس سهرابی</h2>
         <div class="rep-role">نماینده ارشد فنی و توسعه زیرساخت</div>
         
-        <!-- بیوگرافی تمیز و یکدست بدون هیچ خط یا باکس حاشیه‌ای -->
+        <!-- بیوگرافی تمیز -->
         <p class="rep-bio">
           متخصص معماری شبکه، راهکارهای تلفنی VoIP و هوشمندسازی فرآیندهای کسب‌وکار با سابقه اجرای بیش از ده‌ها پروژه موفق سازمانی.
         </p>
