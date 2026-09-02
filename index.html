@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>مهندس اشترخانی | خدمات تخصصی زیرساخت IT، هوش مصنوعی و اتوماسیون</title>
   
-  <!-- فونت وزیرمتن از CDN -->
+  <!-- فونت وزیرمتن از گوگل -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -16,12 +16,11 @@
   <style>
     :root {
       --bg-color: #0b0f19;
-      --card-bg: rgba(22, 28, 45, 0.75);
+      --card-bg: rgba(22, 28, 45, 0.85);
       --card-border: rgba(255, 255, 255, 0.08);
       --accent-cyan: #06b6d4;
       --accent-blue: #3b82f6;
       --accent-purple: #8b5cf6;
-      --accent-emerald: #10b981;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
     }
@@ -47,7 +46,7 @@
       overflow-x: hidden;
     }
 
-    /* بک‌گراند گرافیکی مدرن */
+    /* هاله‌های نوری پس‌زمینه */
     .ambient-glow {
       position: fixed;
       width: 320px;
@@ -67,27 +66,29 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      z-wrapper {
-      position: relative;
-      width: 110px;
-      height: 110px;
-      margin: 0 auto 16px;
+      z-index: 1;
     }
 
-    .avatar-img16px);
+    /* کارت پروفایل اصلی */
+    .profile-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--card-border);
       border-radius: 28px;
-      padding: 28px 22px;
+      padding: 28px 20px;
       text-align: center;
-      position: relative;
       box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
     }
 
     .avatar-wrapper {
-      position: relative;
       width: 110px;
       height: 110px;
       margin: 0 auto 16px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+      box-shadow: 0 0 25px rgba(6, 182, 212, 0.35);
     }
 
     .avatar-img {
@@ -95,8 +96,8 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(6, 182, 212, 0.6);
-      box-shadow: 0 0 25px rgba(6, 182, 212, 0.3);
+      display: block;
+      background-color: #1e293b;
     }
 
     .rep-name {
@@ -120,18 +121,17 @@
       background: rgba(11, 15, 25, 0.6);
       padding: 12px 16px;
       border-radius: 16px;
-      border: 1px solid rgba(255, 25;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      margin-bottom: 18px;
     }
 
-    .btn {
+    .contact-info-item {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 14px  center;
-      justify-content: center;
       gap: 10px;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      font-weight: 600;
       color: #e2e8f0;
       direction: ltr;
     }
@@ -142,7 +142,7 @@
       height: 18px;
     }
 
-    /* دکمه‌های تماس سریع */
+    /* دکمه‌های اکشن */
     .action-buttons {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -175,17 +175,17 @@
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(255, 255, 255, 0.08);
       color: #ffffff;
       border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .btn-secondary:active {
       transform: scale(0.97);
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.15);
     }
 
-    /* کارت‌های دسته‌بندی خدمات */
+    /* بخش‌های لیست خدمات */
     .section-card {
       background: var(--card-bg);
       backdrop-filter: blur(16px);
@@ -193,6 +193,7 @@
       border: 1px solid var(--card-border);
       border-radius: 24px;
       padding: 22px 18px;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
     }
 
     .section-header {
@@ -224,13 +225,13 @@
       gap: 10px;
     }
 
-    /* دکمه‌های اینتراکتیو مهارت‌ها */
+    /* دکمه‌های بازشونده خدمات */
     .skill-interactive-btn {
       width: 100%;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 14px;
-      padding: 13px 14px;
+      padding: 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -244,7 +245,7 @@
 
     .skill-interactive-btn:hover,
     .skill-interactive-btn:active {
-      background: rgba(30, 41, 59, 0.85);
+      background: rgba(30, 41, 59, 0.9);
       border-color: rgba(6, 182, 212, 0.4);
       transform: translateX(-3px);
     }
@@ -306,7 +307,7 @@
       align-items: center;
     }
 
-    /* مودال (Modal Window) */
+    /* مودال پاپ‌آپ */
     .modal-backdrop {
       position: fixed;
       top: 0;
@@ -411,13 +412,12 @@
 </head>
 <body>
 
-  <!-- هاله‌های نوری پس‌زمینه -->
   <div class="ambient-glow glow-1"></div>
   <div class="ambient-glow glow-2"></div>
 
   <main class="main-container">
 
-    <!-- کارت اصلی پروفایل و معرف -->
+    <!-- کارت پروفایل -->
     <section class="profile-card">
       <div class="avatar-wrapper">
         <img src="profile.jpg" alt="مهندس اشترخانی" class="avatar-img">
@@ -445,7 +445,7 @@
       </div>
     </section>
 
-    <!-- بخش ۱: زیرساخت، شبکه و امنیت شبکه -->
+    <!-- بخش خدمات IT -->
     <section class="section-card">
       <div class="section-header header-it">
         <i data-lucide="server"></i>
@@ -494,7 +494,7 @@
       </div>
     </section>
 
-    <!-- بخش ۲: هوش مصنوعی و تولید محتوا -->
+    <!-- بخش خدمات AI -->
     <section class="section-card">
       <div class="section-header header-ai">
         <i data-lucide="sparkles"></i>
@@ -525,7 +525,7 @@
 
   </main>
 
-  <!-- مودال نمایش جزئیات خدمات -->
+  <!-- مودال پاپ‌آپ -->
   <div class="modal-backdrop" id="skillModal" onclick="closeModalOnBackdrop(event)">
     <div class="modal-box">
       <button class="modal-close-btn" onclick="closeSkillModal()">
@@ -535,18 +535,16 @@
         <i data-lucide="info" id="modalIcon"></i>
       </div>
       <h3 class="modal-title" id="modalTitle">عنوان خدمت</h3>
-      <p class="modal-desc" id="modalDesc">توضیحات تکمیلی خدمت در اینجا قرار می‌گیرد.</p>
+      <p class="modal-desc" id="modalDesc">توضیحات تکمیلی</p>
       <div class="modal-benefit-box" id="modalBenefit">
-        مزیت تجاری این راهکار برای شما
+        مزیت تجاری
       </div>
     </div>
   </div>
 
   <script>
-    // راه‌اندازی آیکون‌های Lucide
     lucide.createIcons();
 
-    // بانک داده جزئیات خدمات
     const skillsData = {
       infra: {
         title: 'راه‌اندازی صفر تا صد زیرساخت فیزیکی شبکه',
@@ -592,7 +590,6 @@
       }
     };
 
-    // باز کردن پنجره مودال
     function openSkillModal(skillKey) {
       const data = skillsData[skillKey];
       if (!data) return;
@@ -610,25 +607,21 @@
       modal.classList.add('active');
     }
 
-    // بستن پنجره مودال
     function closeSkillModal() {
       const modal = document.getElementById('skillModal');
       modal.classList.remove('active');
     }
 
-    // بستن با کلیک روی بک‌گراند
     function closeModalOnBackdrop(e) {
       if (e.target.id === 'skillModal') {
         closeSkillModal();
       }
     }
 
-    // بستن با فشردن کلید Escape کیبورد
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeSkillModal();
     });
 
-    // تابع دانلود مستقیم کارت مخاطب (vCard)
     function downloadVCard() {
       const vCardContent = [
         'BEGIN:VCARD',
